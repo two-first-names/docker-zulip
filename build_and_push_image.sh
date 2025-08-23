@@ -42,7 +42,7 @@
 
 set -ex
 
-REGISTRY="${REGISTRY:-ghcr.io/zulip/zulip}"
+REGISTRY="${REGISTRY:-ghcr.io/two-first-names/zulip}"
 REGISTRY_TAG="${REGISTRY_TAG:-${GITHUB_REF_NAME}}"
 
 if [ -z "${REGISTRY_TAG}" ]; then
@@ -73,7 +73,7 @@ fi
 # driver. Please switch to a different driver (eg. "docker buildx create
 # --use")
 BUILDX_BUILDER="${BUILDX_BUILDER:-zulip}"
-BUILDX_PLATFORMS="${BUILDX_PLATFORMS:-linux/amd64,linux/arm64}"
+BUILDX_PLATFORMS="${BUILDX_PLATFORMS:-linux/arm64}"
 
 if [ "${EXTERNAL_QEMU}" != "1" ]; then
 	# --credential yes is required to run sudo within qemu, without it the
